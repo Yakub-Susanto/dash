@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Year Reflection and Planning</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            position: relative;
+        }
+        #background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            overflow: hidden;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+        }
+        section {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        textarea, input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        #new-year-wish {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #dff0d8;
+            color: #3c763d;
+            border: 1px solid #d6e9c6;
+            border-radius: 5px;
+            display: none;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="background">
+        <div style="position: relative; width: 100%; height: 0; padding-top: 177.7778%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAGa1rgbiKY/yas6bMgD0Skr-lt2YEC_Fw/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+        </div>
+        <a href="https://www.canva.com/design/DAGa1rgbiKY/yas6bMgD0Skr-lt2YEC_Fw/view?utm_content=DAGa1rgbiKY&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">LEVATE</a> by Yakub Susanto
+    </div>
+
+    <header>
+        <div style="position: relative; width: 100%; height: 0; padding-top: 30.0000%; padding-bottom: 0; box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16); margin-top: 1.6em; margin-bottom: 0.9em; overflow: hidden; border-radius: 8px; will-change: transform;">
+            <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0;margin: 0;" src="https://www.canva.com/design/DAGa1vu3uyg/A92HQS2iiqe9vr6Tn1gubQ/view?embed" allowfullscreen="allowfullscreen" allow="fullscreen"></iframe>
+        </div>
+        <a href="https://www.canva.com/design/DAGa1vu3uyg/A92HQS2iiqe9vr6Tn1gubQ/view?utm_content=DAGa1vu3uyg&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener">Simple Year Compass</a> by Yakub Susanto
+        <h1>Year Reflection and Planning</h1>
+        <p>Reflect on the past year and plan for the year ahead</p>
+    </header>
+
+    <section id="reflection">
+        <h2>Reflect on the Past Year</h2>
+        <label for="past-events">What significant events happened last year?</label>
+        <textarea id="past-events" rows="4" placeholder="List your significant events..."></textarea>
+
+        <label for="wise-decisions">What was the wisest decision you made?</label>
+        <textarea id="wise-decisions" rows="4" placeholder="Describe your wisest decision..."></textarea>
+
+        <label for="biggest-lessons">What was the biggest lesson you learned?</label>
+        <textarea id="biggest-lessons" rows="4" placeholder="Describe your biggest lesson..."></textarea>
+
+        <label for="challenges">What were the three biggest challenges you faced?</label>
+        <textarea id="challenges" rows="4" placeholder="List your biggest challenges..."></textarea>
+
+        <label for="gratitude">What are you most grateful for?</label>
+        <textarea id="gratitude" rows="4" placeholder="What are you grateful for?"></textarea>
+
+        <label for="three-words">Describe last year in three words.</label>
+        <input type="text" id="three-words" placeholder="Three words...">
+    </section>
+
+    <section id="planning">
+        <h2>Plan for the Next Year</h2>
+        <label for="dreams">What are your biggest dreams for the next year?</label>
+        <textarea id="dreams" rows="4" placeholder="Write your dreams..."></textarea>
+
+        <label for="goals">What are your top three goals?</label>
+        <input type="text" id="goal1" placeholder="Goal 1">
+        <input type="text" id="goal2" placeholder="Goal 2">
+        <input type="text" id="goal3" placeholder="Goal 3">
+
+        <label for="intentions">What are your intentions for the year?</label>
+        <textarea id="intentions" rows="4" placeholder="Write your intentions..."></textarea>
+
+        <label for="special-year">Why will this year be special for you?</label>
+        <textarea id="special-year" rows="4" placeholder="Describe why this year is special..."></textarea>
+    </section>
+
+    <section id="actions">
+        <button onclick="saveReflection()">Save Reflection</button>
+        <div id="new-year-wish"></div>
+    </section>
+
+    <script>
+        function saveReflection() {
+            const reflection = {
+                pastEvents: document.getElementById('past-events').value,
+                wiseDecisions: document.getElementById('wise-decisions').value,
+                biggestLessons: document.getElementById('biggest-lessons').value,
+                challenges: document.getElementById('challenges').value,
+                gratitude: document.getElementById('gratitude').value,
+                threeWords: document.getElementById('three-words').value,
+                dreams: document.getElementById('dreams').value,
+                goals: [
+                    document.getElementById('goal1').value,
+                    document.getElementById('goal2').value,
+                    document.getElementById('goal3').value
+                ],
+                intentions: document.getElementById('intentions').value,
+                specialYear: document.getElementById('special-year').value
+            };
+            
+            console.log("Reflection saved:", reflection);
+
+            // Display a random New Year wish
+            const wishes = [
+                "May this year bring new happiness, new goals, new achievements, and many new inspirations to your life!",
+                "Wishing you a year full of blessings and beyond!",
+                "Here's to a new year filled with health, love, and success!",
+                "May your dreams turn into reality and all your efforts into achievements!",
+                "Happy New Year! May the coming year be full of grand adventures and opportunities.",
+                "May your 2025 be filled with joy.",
+                "Wishing you and your health and prosperity in the new year.",
+                "Let your dreams take flight in the new year!"
+            ];
+            const randomWish = wishes[Math.floor(Math.random() * wishes.length)];
+            
+            const wishDiv = document.getElementById('new-year-wish');
+            wishDiv.textContent = randomWish;
+            wishDiv.style.display = 'block';
+
+            alert("Your reflection and plans have been saved! Check the console for details.");
+        }
+    </script>
+</body>
+</html>
